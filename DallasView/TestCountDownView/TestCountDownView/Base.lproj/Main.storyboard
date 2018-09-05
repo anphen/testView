@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuE-hh-zZ1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-TG-R8u">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syl-nT-2zG">
+                                                <rect key="frame" x="124" y="48" width="126" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="126" id="YUB-UZ-Icl"/>
+                                                    <constraint firstAttribute="height" constant="36" id="qau-JX-rkq"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="syl-nT-2zG" firstAttribute="top" secondItem="YaF-TG-R8u" secondAttribute="top" constant="48" id="H1Y-td-M1S"/>
+                                            <constraint firstAttribute="height" constant="1000" id="VW5-BA-HsW"/>
+                                            <constraint firstItem="syl-nT-2zG" firstAttribute="centerX" secondItem="YaF-TG-R8u" secondAttribute="centerX" id="b95-d3-Bfj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YaF-TG-R8u" secondAttribute="trailing" id="6Io-dY-MTI"/>
+                                    <constraint firstAttribute="trailing" secondItem="YaF-TG-R8u" secondAttribute="trailing" id="8C6-Iv-JYw"/>
+                                    <constraint firstAttribute="bottom" secondItem="YaF-TG-R8u" secondAttribute="bottom" id="ASA-D6-DYF"/>
+                                    <constraint firstAttribute="bottom" secondItem="YaF-TG-R8u" secondAttribute="bottom" id="Bgn-Ao-dvt"/>
+                                    <constraint firstItem="YaF-TG-R8u" firstAttribute="top" secondItem="SuE-hh-zZ1" secondAttribute="top" id="DH4-B7-AW4"/>
+                                    <constraint firstItem="YaF-TG-R8u" firstAttribute="width" secondItem="SuE-hh-zZ1" secondAttribute="width" id="UeM-4Y-C7e"/>
+                                    <constraint firstItem="YaF-TG-R8u" firstAttribute="leading" secondItem="SuE-hh-zZ1" secondAttribute="leading" id="f8n-3B-khq"/>
+                                    <constraint firstItem="YaF-TG-R8u" firstAttribute="leading" secondItem="SuE-hh-zZ1" secondAttribute="leading" id="i6H-Qb-nHG"/>
+                                    <constraint firstItem="YaF-TG-R8u" firstAttribute="top" secondItem="SuE-hh-zZ1" secondAttribute="top" id="lM7-rm-bXZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuE-hh-zZ1" secondAttribute="bottom" id="CxD-UE-WCz"/>
+                            <constraint firstItem="SuE-hh-zZ1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="EaA-UT-ptY"/>
+                            <constraint firstAttribute="trailing" secondItem="SuE-hh-zZ1" secondAttribute="trailing" id="GG9-RU-iHn"/>
+                            <constraint firstItem="SuE-hh-zZ1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k3P-SG-gjN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countDownView" destination="syl-nT-2zG" id="32X-cw-Vb5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-369" y="-140"/>
+        </scene>
+    </scenes>
+</document>

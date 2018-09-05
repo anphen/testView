@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SNCouponCenterCountDownView">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qss-Az-diP">
+                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="38"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.3529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWi-5H-EmR">
+                    <rect key="frame" x="90.5" y="0.0" width="39.5" height="38"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.3529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snmb_couponcenter_CountDown_colon.png" translatesAutoresizingMaskIntoConstraints="NO" id="PFO-kG-NPz">
+                    <rect key="frame" x="84.5" y="0.0" width="6" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="6" id="wiJ-tw-XuE"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snmb_couponcenter_CountDown_colon.png" translatesAutoresizingMaskIntoConstraints="NO" id="XSA-hX-DlN">
+                    <rect key="frame" x="39.5" y="0.0" width="6" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="6" id="mbp-b4-Uu9"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUy-9e-IMn">
+                    <rect key="frame" x="45.5" y="0.0" width="39" height="38"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.3529411764705882" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KUy-9e-IMn" firstAttribute="leading" secondItem="XSA-hX-DlN" secondAttribute="trailing" id="4f0-yS-qM9"/>
+                <constraint firstAttribute="bottom" secondItem="PFO-kG-NPz" secondAttribute="bottom" id="ASB-th-i4q"/>
+                <constraint firstItem="XSA-hX-DlN" firstAttribute="leading" secondItem="qss-Az-diP" secondAttribute="trailing" id="BY1-Ra-Lo1"/>
+                <constraint firstAttribute="bottom" secondItem="tWi-5H-EmR" secondAttribute="bottom" id="ChY-1R-LWZ"/>
+                <constraint firstItem="PFO-kG-NPz" firstAttribute="leading" secondItem="KUy-9e-IMn" secondAttribute="trailing" id="DvY-Cr-ssC"/>
+                <constraint firstAttribute="bottom" secondItem="KUy-9e-IMn" secondAttribute="bottom" id="EBG-gg-BxC"/>
+                <constraint firstItem="XSA-hX-DlN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="F4O-e6-uQg"/>
+                <constraint firstItem="tWi-5H-EmR" firstAttribute="height" secondItem="qss-Az-diP" secondAttribute="height" id="FDm-ez-fFU"/>
+                <constraint firstItem="tWi-5H-EmR" firstAttribute="width" secondItem="qss-Az-diP" secondAttribute="width" id="FY9-VL-Neo"/>
+                <constraint firstItem="PFO-kG-NPz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RV2-AV-SvS"/>
+                <constraint firstItem="tWi-5H-EmR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SDs-IK-8Me"/>
+                <constraint firstItem="KUy-9e-IMn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tsk-UL-tvY"/>
+                <constraint firstItem="qss-Az-diP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vt8-8o-e6k"/>
+                <constraint firstAttribute="trailing" secondItem="tWi-5H-EmR" secondAttribute="trailing" id="Yvq-Y0-zNL"/>
+                <constraint firstItem="qss-Az-diP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e1g-Dk-OGg"/>
+                <constraint firstItem="KUy-9e-IMn" firstAttribute="width" secondItem="qss-Az-diP" secondAttribute="width" id="gh5-lG-1uX"/>
+                <constraint firstAttribute="bottom" secondItem="XSA-hX-DlN" secondAttribute="bottom" id="khF-3N-Ip3"/>
+                <constraint firstItem="tWi-5H-EmR" firstAttribute="leading" secondItem="PFO-kG-NPz" secondAttribute="trailing" id="kxz-5R-u0o"/>
+                <constraint firstAttribute="bottom" secondItem="qss-Az-diP" secondAttribute="bottom" id="vAx-WR-Izq"/>
+                <constraint firstItem="KUy-9e-IMn" firstAttribute="height" secondItem="qss-Az-diP" secondAttribute="height" id="xjz-Vh-fnb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="hourLabel" destination="qss-Az-diP" id="aZm-5I-BdD"/>
+                <outlet property="miniLabel" destination="KUy-9e-IMn" id="aSC-c8-6vo"/>
+                <outlet property="seclabel" destination="tWi-5H-EmR" id="Kyo-Vk-h8h"/>
+            </connections>
+            <point key="canvasLocation" x="76" y="-47"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="snmb_couponcenter_CountDown_colon.png" width="2" height="18"/>
+    </resources>
+</document>

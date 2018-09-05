@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB7573821E9F085D0090774B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573811E9F085D0090774B /* main.m */; };
+		FB7573851E9F085D0090774B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573841E9F085D0090774B /* AppDelegate.m */; };
+		FB7573881E9F085D0090774B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573871E9F085D0090774B /* ViewController.m */; };
+		FB75738B1E9F085D0090774B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7573891E9F085D0090774B /* Main.storyboard */; };
+		FB75738D1E9F085D0090774B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB75738C1E9F085D0090774B /* Assets.xcassets */; };
+		FB7573901E9F085D0090774B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB75738E1E9F085D0090774B /* LaunchScreen.storyboard */; };
+		FB75739B1E9F085E0090774B /* testProgressBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB75739A1E9F085E0090774B /* testProgressBarTests.m */; };
+		FB7573A61E9F085E0090774B /* testProgressBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573A51E9F085E0090774B /* testProgressBarUITests.m */; };
+		FB7573B71E9F09280090774B /* SNCouponCenterProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573B61E9F09280090774B /* SNCouponCenterProgressBar.m */; };
+		FB7573B91E9F0AF50090774B /* SNCouponCenterProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7573B81E9F0AF50090774B /* SNCouponCenterProgressBar.xib */; };
+		FB7573DF1E9F1EAD0090774B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB7573C51E9F1EAD0090774B /* Info.plist */; };
+		FB7573E01E9F1EAD0090774B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573C71E9F1EAD0090774B /* MASCompositeConstraint.m */; };
+		FB7573E11E9F1EAD0090774B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573CA1E9F1EAD0090774B /* MASConstraint.m */; };
+		FB7573E21E9F1EAD0090774B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573CC1E9F1EAD0090774B /* MASConstraintMaker.m */; };
+		FB7573E31E9F1EAD0090774B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573CE1E9F1EAD0090774B /* MASLayoutConstraint.m */; };
+		FB7573E41E9F1EAD0090774B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573D21E9F1EAD0090774B /* MASViewAttribute.m */; };
+		FB7573E51E9F1EAD0090774B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573D41E9F1EAD0090774B /* MASViewConstraint.m */; };
+		FB7573E61E9F1EAD0090774B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573D61E9F1EAD0090774B /* NSArray+MASAdditions.m */; };
+		FB7573E71E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573D91E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		FB7573E81E9F1EAD0090774B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573DB1E9F1EAD0090774B /* View+MASAdditions.m */; };
+		FB7573E91E9F1EAD0090774B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7573DE1E9F1EAD0090774B /* ViewController+MASAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB7573971E9F085D0090774B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB7573751E9F085D0090774B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB75737C1E9F085D0090774B;
+			remoteInfo = testProgressBar;
+		};
+		FB7573A21E9F085E0090774B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB7573751E9F085D0090774B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB75737C1E9F085D0090774B;
+			remoteInfo = testProgressBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB75737D1E9F085D0090774B /* testProgressBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testProgressBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB7573811E9F085D0090774B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB7573831E9F085D0090774B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB7573841E9F085D0090774B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB7573861E9F085D0090774B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FB7573871E9F085D0090774B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FB75738A1E9F085D0090774B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB75738C1E9F085D0090774B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB75738F1E9F085D0090774B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB7573911E9F085D0090774B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7573961E9F085D0090774B /* testProgressBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testProgressBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB75739A1E9F085E0090774B /* testProgressBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testProgressBarTests.m; sourceTree = "<group>"; };
+		FB75739C1E9F085E0090774B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7573A11E9F085E0090774B /* testProgressBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testProgressBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB7573A51E9F085E0090774B /* testProgressBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testProgressBarUITests.m; sourceTree = "<group>"; };
+		FB7573A71E9F085E0090774B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7573B51E9F09280090774B /* SNCouponCenterProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNCouponCenterProgressBar.h; sourceTree = "<group>"; };
+		FB7573B61E9F09280090774B /* SNCouponCenterProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNCouponCenterProgressBar.m; sourceTree = "<group>"; };
+		FB7573B81E9F0AF50090774B /* SNCouponCenterProgressBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNCouponCenterProgressBar.xib; sourceTree = "<group>"; };
+		FB7573C51E9F1EAD0090774B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7573C61E9F1EAD0090774B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		FB7573C71E9F1EAD0090774B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		FB7573C81E9F1EAD0090774B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		FB7573C91E9F1EAD0090774B /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		FB7573CA1E9F1EAD0090774B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		FB7573CB1E9F1EAD0090774B /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		FB7573CC1E9F1EAD0090774B /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		FB7573CD1E9F1EAD0090774B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		FB7573CE1E9F1EAD0090774B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		FB7573CF1E9F1EAD0090774B /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		FB7573D01E9F1EAD0090774B /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		FB7573D11E9F1EAD0090774B /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		FB7573D21E9F1EAD0090774B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		FB7573D31E9F1EAD0090774B /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		FB7573D41E9F1EAD0090774B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		FB7573D51E9F1EAD0090774B /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		FB7573D61E9F1EAD0090774B /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		FB7573D71E9F1EAD0090774B /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FB7573D81E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		FB7573D91E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		FB7573DA1E9F1EAD0090774B /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		FB7573DB1E9F1EAD0090774B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		FB7573DC1E9F1EAD0090774B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FB7573DD1E9F1EAD0090774B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		FB7573DE1E9F1EAD0090774B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB75737A1E9F085D0090774B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB7573931E9F085D0090774B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB75739E1E9F085E0090774B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB7573741E9F085D0090774B = {
+			isa = PBXGroup;
+			children = (
+				FB75737F1E9F085D0090774B /* testProgressBar */,
+				FB7573991E9F085E0090774B /* testProgressBarTests */,
+				FB7573A41E9F085E0090774B /* testProgressBarUITests */,
+				FB75737E1E9F085D0090774B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB75737E1E9F085D0090774B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB75737D1E9F085D0090774B /* testProgressBar.app */,
+				FB7573961E9F085D0090774B /* testProgressBarTests.xctest */,
+				FB7573A11E9F085E0090774B /* testProgressBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB75737F1E9F085D0090774B /* testProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				FB7573C41E9F1EAD0090774B /* Masonry */,
+				FB7573831E9F085D0090774B /* AppDelegate.h */,
+				FB7573841E9F085D0090774B /* AppDelegate.m */,
+				FB7573861E9F085D0090774B /* ViewController.h */,
+				FB7573871E9F085D0090774B /* ViewController.m */,
+				FB7573B51E9F09280090774B /* SNCouponCenterProgressBar.h */,
+				FB7573B61E9F09280090774B /* SNCouponCenterProgressBar.m */,
+				FB7573B81E9F0AF50090774B /* SNCouponCenterProgressBar.xib */,
+				FB7573891E9F085D0090774B /* Main.storyboard */,
+				FB75738C1E9F085D0090774B /* Assets.xcassets */,
+				FB75738E1E9F085D0090774B /* LaunchScreen.storyboard */,
+				FB7573911E9F085D0090774B /* Info.plist */,
+				FB7573801E9F085D0090774B /* Supporting Files */,
+			);
+			path = testProgressBar;
+			sourceTree = "<group>";
+		};
+		FB7573801E9F085D0090774B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB7573811E9F085D0090774B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB7573991E9F085E0090774B /* testProgressBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB75739A1E9F085E0090774B /* testProgressBarTests.m */,
+				FB75739C1E9F085E0090774B /* Info.plist */,
+			);
+			path = testProgressBarTests;
+			sourceTree = "<group>";
+		};
+		FB7573A41E9F085E0090774B /* testProgressBarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB7573A51E9F085E0090774B /* testProgressBarUITests.m */,
+				FB7573A71E9F085E0090774B /* Info.plist */,
+			);
+			path = testProgressBarUITests;
+			sourceTree = "<group>";
+		};
+		FB7573C41E9F1EAD0090774B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				FB7573C51E9F1EAD0090774B /* Info.plist */,
+				FB7573C61E9F1EAD0090774B /* MASCompositeConstraint.h */,
+				FB7573C71E9F1EAD0090774B /* MASCompositeConstraint.m */,
+				FB7573C81E9F1EAD0090774B /* MASConstraint+Private.h */,
+				FB7573C91E9F1EAD0090774B /* MASConstraint.h */,
+				FB7573CA1E9F1EAD0090774B /* MASConstraint.m */,
+				FB7573CB1E9F1EAD0090774B /* MASConstraintMaker.h */,
+				FB7573CC1E9F1EAD0090774B /* MASConstraintMaker.m */,
+				FB7573CD1E9F1EAD0090774B /* MASLayoutConstraint.h */,
+				FB7573CE1E9F1EAD0090774B /* MASLayoutConstraint.m */,
+				FB7573CF1E9F1EAD0090774B /* Masonry.h */,
+				FB7573D01E9F1EAD0090774B /* MASUtilities.h */,
+				FB7573D11E9F1EAD0090774B /* MASViewAttribute.h */,
+				FB7573D21E9F1EAD0090774B /* MASViewAttribute.m */,
+				FB7573D31E9F1EAD0090774B /* MASViewConstraint.h */,
+				FB7573D41E9F1EAD0090774B /* MASViewConstraint.m */,
+				FB7573D51E9F1EAD0090774B /* NSArray+MASAdditions.h */,
+				FB7573D61E9F1EAD0090774B /* NSArray+MASAdditions.m */,
+				FB7573D71E9F1EAD0090774B /* NSArray+MASShorthandAdditions.h */,
+				FB7573D81E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.h */,
+				FB7573D91E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.m */,
+				FB7573DA1E9F1EAD0090774B /* View+MASAdditions.h */,
+				FB7573DB1E9F1EAD0090774B /* View+MASAdditions.m */,
+				FB7573DC1E9F1EAD0090774B /* View+MASShorthandAdditions.h */,
+				FB7573DD1E9F1EAD0090774B /* ViewController+MASAdditions.h */,
+				FB7573DE1E9F1EAD0090774B /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB75737C1E9F085D0090774B /* testProgressBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB7573AA1E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBar" */;
+			buildPhases = (
+				FB7573791E9F085D0090774B /* Sources */,
+				FB75737A1E9F085D0090774B /* Frameworks */,
+				FB75737B1E9F085D0090774B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testProgressBar;
+			productName = testProgressBar;
+			productReference = FB75737D1E9F085D0090774B /* testProgressBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB7573951E9F085D0090774B /* testProgressBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB7573AD1E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBarTests" */;
+			buildPhases = (
+				FB7573921E9F085D0090774B /* Sources */,
+				FB7573931E9F085D0090774B /* Frameworks */,
+				FB7573941E9F085D0090774B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB7573981E9F085D0090774B /* PBXTargetDependency */,
+			);
+			name = testProgressBarTests;
+			productName = testProgressBarTests;
+			productReference = FB7573961E9F085D0090774B /* testProgressBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB7573A01E9F085E0090774B /* testProgressBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB7573B01E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBarUITests" */;
+			buildPhases = (
+				FB75739D1E9F085E0090774B /* Sources */,
+				FB75739E1E9F085E0090774B /* Frameworks */,
+				FB75739F1E9F085E0090774B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB7573A31E9F085E0090774B /* PBXTargetDependency */,
+			);
+			name = testProgressBarUITests;
+			productName = testProgressBarUITests;
+			productReference = FB7573A11E9F085E0090774B /* testProgressBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB7573751E9F085D0090774B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Suning;
+				TargetAttributes = {
+					FB75737C1E9F085D0090774B = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 92U93F5ZFJ;
+						ProvisioningStyle = Automatic;
+					};
+					FB7573951E9F085D0090774B = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 92U93F5ZFJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FB75737C1E9F085D0090774B;
+					};
+					FB7573A01E9F085E0090774B = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 92U93F5ZFJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FB75737C1E9F085D0090774B;
+					};
+				};
+			};
+			buildConfigurationList = FB7573781E9F085D0090774B /* Build configuration list for PBXProject "testProgressBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB7573741E9F085D0090774B;
+			productRefGroup = FB75737E1E9F085D0090774B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB75737C1E9F085D0090774B /* testProgressBar */,
+				FB7573951E9F085D0090774B /* testProgressBarTests */,
+				FB7573A01E9F085E0090774B /* testProgressBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB75737B1E9F085D0090774B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB7573901E9F085D0090774B /* LaunchScreen.storyboard in Resources */,
+				FB7573B91E9F0AF50090774B /* SNCouponCenterProgressBar.xib in Resources */,
+				FB75738D1E9F085D0090774B /* Assets.xcassets in Resources */,
+				FB7573DF1E9F1EAD0090774B /* Info.plist in Resources */,
+				FB75738B1E9F085D0090774B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB7573941E9F085D0090774B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB75739F1E9F085E0090774B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB7573791E9F085D0090774B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB7573E21E9F1EAD0090774B /* MASConstraintMaker.m in Sources */,
+				FB7573881E9F085D0090774B /* ViewController.m in Sources */,
+				FB7573851E9F085D0090774B /* AppDelegate.m in Sources */,
+				FB7573E11E9F1EAD0090774B /* MASConstraint.m in Sources */,
+				FB7573E91E9F1EAD0090774B /* ViewController+MASAdditions.m in Sources */,
+				FB7573E31E9F1EAD0090774B /* MASLayoutConstraint.m in Sources */,
+				FB7573E61E9F1EAD0090774B /* NSArray+MASAdditions.m in Sources */,
+				FB7573E51E9F1EAD0090774B /* MASViewConstraint.m in Sources */,
+				FB7573E41E9F1EAD0090774B /* MASViewAttribute.m in Sources */,
+				FB7573E81E9F1EAD0090774B /* View+MASAdditions.m in Sources */,
+				FB7573B71E9F09280090774B /* SNCouponCenterProgressBar.m in Sources */,
+				FB7573821E9F085D0090774B /* main.m in Sources */,
+				FB7573E01E9F1EAD0090774B /* MASCompositeConstraint.m in Sources */,
+				FB7573E71E9F1EAD0090774B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB7573921E9F085D0090774B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB75739B1E9F085E0090774B /* testProgressBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB75739D1E9F085E0090774B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB7573A61E9F085E0090774B /* testProgressBarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB7573981E9F085D0090774B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB75737C1E9F085D0090774B /* testProgressBar */;
+			targetProxy = FB7573971E9F085D0090774B /* PBXContainerItemProxy */;
+		};
+		FB7573A31E9F085E0090774B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB75737C1E9F085D0090774B /* testProgressBar */;
+			targetProxy = FB7573A21E9F085E0090774B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB7573891E9F085D0090774B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB75738A1E9F085D0090774B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB75738E1E9F085D0090774B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB75738F1E9F085D0090774B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB7573A81E9F085E0090774B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB7573A91E9F085E0090774B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB7573AB1E9F085E0090774B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB7573AC1E9F085E0090774B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FB7573AE1E9F085E0090774B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testProgressBar.app/testProgressBar";
+			};
+			name = Debug;
+		};
+		FB7573AF1E9F085E0090774B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testProgressBar.app/testProgressBar";
+			};
+			name = Release;
+		};
+		FB7573B11E9F085E0090774B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = testProgressBar;
+			};
+			name = Debug;
+		};
+		FB7573B21E9F085E0090774B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 92U93F5ZFJ;
+				INFOPLIST_FILE = testProgressBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suning.testProgressBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = testProgressBar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB7573781E9F085D0090774B /* Build configuration list for PBXProject "testProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7573A81E9F085E0090774B /* Debug */,
+				FB7573A91E9F085E0090774B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB7573AA1E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7573AB1E9F085E0090774B /* Debug */,
+				FB7573AC1E9F085E0090774B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB7573AD1E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7573AE1E9F085E0090774B /* Debug */,
+				FB7573AF1E9F085E0090774B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB7573B01E9F085E0090774B /* Build configuration list for PBXNativeTarget "testProgressBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB7573B11E9F085E0090774B /* Debug */,
+				FB7573B21E9F085E0090774B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB7573751E9F085D0090774B /* Project object */;
+}
