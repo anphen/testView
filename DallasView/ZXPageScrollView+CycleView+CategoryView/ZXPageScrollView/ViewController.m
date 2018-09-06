@@ -21,8 +21,9 @@
 //#define DZXCategoryView
 //#define DZXPageCollectionView
 #define DZXCycleBannerView
+#define kRandomColor  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
 
-@interface ViewController ()<ZXPageScrollViewDelegate, ZXPageScrollViewDataSource, ZXPageCollectionViewDelegate, ZXPageCollectionViewDataSource>
+@interface ViewController ()<ZXPageScrollViewDelegate, ZXPageScrollViewDataSource, ZXPageCollectionViewDelegate, ZXPageCollectionViewDataSource, ZXCycleBannerViewDelegate, ZXCycleBannerViewDataSource>
 
 @property (nonatomic, strong) ZXPageScrollView *pageScrollView;
 @property (weak, nonatomic) IBOutlet UIButton *swithButton;
@@ -68,8 +69,9 @@
     
 #ifdef DZXCycleBannerView
     ZXCycleBannerView *bannerView = [[ZXCycleBannerView alloc]initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, self.view.frame.size.width * 110 /169.0)];
+    bannerView.delegate = self;
+    bannerView.dataSource = self;
     [self.view addSubview:bannerView];
-    bannerView.imageArray = @[@"h1", @"h2", @"h3", @"h4"];
     bannerView.autoScrollTimeInterval = 2.0;
     bannerView.autoScroll = YES;
     bannerView.showPageControl = YES;
@@ -100,6 +102,26 @@
     [PCV changeToIndex:4 animation:NO];
     
 #endif
+}
+
+
+- (NSInteger)numberOfItemsZXCycleBannerView:(ZXCycleBannerView *)bannerView{
+    return 5;
+}
+
+- (UIView *)bannerView:(ZXCycleBannerView *)bannerView
+    viewForItemAtIndex:(NSInteger)index{
+    NSString *reuseId = [NSString stringWithFormat:@"zxbannerviewIdentifier%li", index];
+    UIView *view = [bannerView dequeueReuseViewWithReuseIdentifier:reuseId forIndex:index];
+    if (!view) {
+        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bannerView.frame.size.width, bannerView.frame.size.height)];
+        view.backgroundColor = kRandomColor;
+        view.reuseIdentifier = reuseId;
+        UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+        textLabel.text = [NSString stringWithFormat:@"%li", index];
+        [view addSubview:textLabel];
+    }
+    return view;
 }
 
 - (NSInteger)numberOfItemsInZXPageCollectionView:(ZXPageCollectionView *)ZXPageCollectionView{

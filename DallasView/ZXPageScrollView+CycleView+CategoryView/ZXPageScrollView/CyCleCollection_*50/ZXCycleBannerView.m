@@ -8,9 +8,23 @@
 
 #import "ZXCycleBannerView.h"
 #import "ZXCycleCollectionViewCell.h"
+#import <objc/runtime.h>
 
 static NSString *const cellIdentifier = @"CycleCellIdentifier";
 static NSInteger const multiple = 10;
+static char UIViewReuseIdentifier;
+
+@implementation UIView(_ZXCycleBannerReuseIdentifier)
+
+- (void) setReuseIdentifier:(NSString *)reuseIdentifier {
+    objc_setAssociatedObject(self, &UIViewReuseIdentifier, reuseIdentifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSString *) reuseIdentifier {
+    return objc_getAssociatedObject(self, &UIViewReuseIdentifier);
+}
+
+@end
 
 @interface ZXCycleBannerView()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
 
@@ -21,36 +35,55 @@ static NSInteger const multiple = 10;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, assign) CGFloat maxContentOffsetX ;
 
+@property (nonatomic, strong) NSMutableArray *reUseViewArray;
+@property (nonatomic, assign) NSInteger itemCount;
+
 @end
 
 @implementation ZXCycleBannerView
-- (void)setImageArray:(NSArray *)imageArray
-{
-    _imageArray = imageArray;
-    _maxContentOffsetX = self.mainCollectionView.frame.size.width * (imageArray.count * multiple - 1);
-    [self.mainCollectionView reloadData];
-    [self reLocationMiddleFirstIndex];
-    self.currentIndex = 0;
-    self.autoScrollTimeInterval = 2.0;
-}
-
-- (void)reLocationMiddleFirstIndex{
-
-    [self.mainCollectionView setContentOffset:CGPointMake((self.imageArray.count * 0.5 * multiple) * self.mainCollectionView.frame.size.width, 0)];
-}
-
-- (void)reLocationMiddleLastIndex{
-    
-    [self.mainCollectionView setContentOffset:CGPointMake((self.imageArray.count * 0.5 * multiple + 3) * self.mainCollectionView.frame.size.width, 0)];
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _currentIndex = 0;
+        _autoScrollTimeInterval = 2.0;
+        _reUseViewArray = [NSMutableArray array];
         [self addSubview:self.mainCollectionView];
     }
     return self;
+}
+
+- (void)setDataSource:(id<ZXCycleBannerViewDataSource>)dataSource{
+    _dataSource = dataSource;
+    if ([dataSource respondsToSelector:@selector(numberOfItemsZXCycleBannerView:)]) {
+        self.itemCount = [self.dataSource numberOfItemsZXCycleBannerView:self];
+        self.maxContentOffsetX = self.mainCollectionView.frame.size.width * (self.itemCount * multiple - 1);
+    }
+    [self.mainCollectionView reloadData];
+    [self reLocationMiddleFirstIndex];
+}
+
+- (void)setDelegate:(id<ZXCycleBannerViewDelegate>)delegate{
+    
+}
+
+- (UIView *)dequeueReuseViewWithReuseIdentifier:(NSString *)identifier forIndex:(NSInteger)index
+{
+    for (UIView *view in self.reUseViewArray) {
+        if ([view.reuseIdentifier isEqualToString:identifier]) {
+            return view;
+        }
+    }
+    return nil;
+}
+
+- (void)reLocationMiddleFirstIndex{
+    [self.mainCollectionView setContentOffset:CGPointMake((self.itemCount * 0.5 * multiple) * self.mainCollectionView.frame.size.width, 0)];
+}
+
+- (void)reLocationMiddleLastIndex{
+    [self.mainCollectionView setContentOffset:CGPointMake((self.itemCount * 0.5 * multiple + 3) * self.mainCollectionView.frame.size.width, 0)];
 }
 
 #pragma mark - getters and setters
@@ -84,7 +117,7 @@ static NSInteger const multiple = 10;
     }
     return _flowLayout;
 }
-#pragma mark - getters and setters
+
 -(void)setAutoScroll:(BOOL)autoScroll
 {
     _autoScroll = autoScroll;
@@ -99,24 +132,54 @@ static NSInteger const multiple = 10;
         _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 50, self.frame.size.width, 50)];
         _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
-        _pageControl.numberOfPages = self.imageArray.count;
+        _pageControl.numberOfPages = self.itemCount;
     }
     return _pageControl;
+}
+
+- (void)setCurrentIndex:(NSInteger)currentIndex{
+    _currentIndex = currentIndex;
+    if (self.showPageControl) {
+        self.pageControl.currentPage = self.currentIndex;
+    }
+}
+
+- (void)setShowPageControl:(BOOL)showPageControl
+{
+    _showPageControl = showPageControl;
+    if (showPageControl) {
+        [self addSubview:self.pageControl];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    return self.imageArray.count * multiple;
+    return self.itemCount * multiple;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ZXCycleCollectionViewCell *cell = (ZXCycleCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSInteger imageIndex = indexPath.row % self.imageArray.count;
-    cell.imageName = self.imageArray[imageIndex];
+    if ([self.dataSource respondsToSelector:@selector(bannerView:viewForItemAtIndex:)]) {
+        NSInteger viewIndex = indexPath.row % self.itemCount;
+        UIView * currentView = [self.dataSource bannerView:self viewForItemAtIndex:viewIndex];
+        if (currentView) {
+            cell.bannerItemView = currentView;
+            BOOL isExist = NO;
+            for (UIView *view1 in self.reUseViewArray) {
+                if ([view1.reuseIdentifier isEqualToString:currentView.reuseIdentifier]) {
+                    isExist = YES;
+                    break;
+                }
+            }
+            if (!isExist) {
+                [self.reUseViewArray addObject:currentView];
+            }
+        }
+    }
     return cell;
 }
 
@@ -128,7 +191,7 @@ static NSInteger const multiple = 10;
         [self reLocationMiddleLastIndex];
     }
     NSInteger count = self.mainCollectionView.contentOffset.x / self.mainCollectionView.frame.size.width;
-    self.currentIndex = count % self.imageArray.count;
+    self.currentIndex = count % self.itemCount;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -151,14 +214,6 @@ static NSInteger const multiple = 10;
     }
 }
 
-#pragma mark - method
-
-- (void)automaticScroll
-{
-    CGFloat currentOffsetX = self.mainCollectionView.contentOffset.x;
-    [self.mainCollectionView setContentOffset:CGPointMake((currentOffsetX + self.mainCollectionView.frame.size.width), 0) animated:YES];
-}
-
 #pragma mark - time
 - (void)setupTimer
 {
@@ -167,34 +222,16 @@ static NSInteger const multiple = 10;
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
+- (void)automaticScroll
+{
+    CGFloat currentOffsetX = self.mainCollectionView.contentOffset.x;
+    [self.mainCollectionView setContentOffset:CGPointMake((currentOffsetX + self.mainCollectionView.frame.size.width), 0) animated:YES];
+}
+
 - (void)invalidateTimer
 {
     [_timer invalidate];
     _timer = nil;
 }
-
-- (void)setShowPageControl:(BOOL)showPageControl
-{
-    _showPageControl = showPageControl;
-    if (showPageControl) {
-        [self addSubview:self.pageControl];
-        [self addObserver:self forKeyPath:@"currentIndex" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    }
-}
-#pragma mark - KVO
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"currentIndex"]) {
-        self.pageControl.currentPage = self.currentIndex;
-    }
-}
-
-#pragma mark - delloc
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:@"currentIndex"];
-}
-
 
 @end

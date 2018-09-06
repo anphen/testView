@@ -24,9 +24,21 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.mainImageView];
+//        [self addSubview:self.mainImageView];
     }
     return self;
+}
+
+- (void)setBannerItemView:(UIView *)bannerItemView{
+    if (_bannerItemView == bannerItemView) {
+        return;
+    }
+    _bannerItemView = bannerItemView;
+    if (bannerItemView) {
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.contentView addSubview:bannerItemView];
+        });
+    }
 }
 
 - (UIImageView *)mainImageView
