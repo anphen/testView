@@ -167,17 +167,27 @@ static char UIViewReuseIdentifier;
         NSInteger viewIndex = indexPath.row % self.itemCount;
         UIView * currentView = [self.dataSource bannerView:self viewForItemAtIndex:viewIndex];
         if (currentView) {
-            cell.bannerItemView = currentView;
-            BOOL isExist = NO;
-            for (UIView *view1 in self.reUseViewArray) {
-                if ([view1.reuseIdentifier isEqualToString:currentView.reuseIdentifier]) {
-                    isExist = YES;
-                    break;
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                cell.bannerItemView = currentView;
+            });
+            dispatch_semaphore_t t = dispatch_semaphore_create(1);
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+                dispatch_semaphore_wait(t, DISPATCH_TIME_FOREVER);
+                BOOL isExist = NO;
+                for (UIView *view1 in self.reUseViewArray) {
+                    if ([view1.reuseIdentifier isEqualToString:currentView.reuseIdentifier]) {
+                        isExist = YES;
+                        break;
+                    }
                 }
-            }
-            if (!isExist) {
-                [self.reUseViewArray addObject:currentView];
-            }
+                if (!isExist) {
+                    [self.reUseViewArray addObject:currentView];
+                }
+                dispatch_semaphore_signal(t);
+            });
+
+           
         }
     }
     return cell;
