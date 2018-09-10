@@ -30,6 +30,7 @@
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) ZXCategoryView *categoryView;
 
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) ZXPageCollectionView *pageCollectionView;
 
 @end
@@ -40,17 +41,19 @@
     [self.pageCollectionView changeToIndex:arc4random()%10 animation:YES];
 }
 - (IBAction)swithButtonAction:(id)sender {
+    
+    [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
    // [self.pageScrollView scrollPageViewToIndex:arc4random_uniform(7)];
     self.automaticallyAdjustsScrollViewInsets = NO;//
 #ifdef DZXPageScrollView
-    [self.view addSubview: self.pageScrollView];
+    [self.contentView addSubview: self.pageScrollView];
 #endif
     
 #ifdef DZXCycleImageView
     self.automaticallyAdjustsScrollViewInsets = NO;//
     self.view.backgroundColor = [UIColor lightGrayColor];
     ZXCycleImageView *cyCleScrollView = [[ZXCycleImageView alloc]initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, self.view.frame.size.width * 110 /169.0)];
-    [self.view addSubview:cyCleScrollView];
+    [self.contentView addSubview:cyCleScrollView];
     cyCleScrollView.imageArray = @[@"h1", @"h2", @"h3", @"h4"];
     cyCleScrollView.autoScrollTimeInterval = 2.0;
     cyCleScrollView.autoScroll = NO;
@@ -60,7 +63,7 @@
     
 #ifdef DZXCyCleScrollView
     ZXCyCleScrollView *cyCleScrollView1 = [[ZXCyCleScrollView alloc]initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, self.view.frame.size.width * 110 /169.0)];
-    [self.view addSubview:cyCleScrollView1];
+    [self.contentView addSubview:cyCleScrollView1];
     cyCleScrollView1.imageArray = @[@"h1", @"h2", @"h3", @"h4"];
     cyCleScrollView1.autoScrollTimeInterval = 2.0;
     cyCleScrollView1.autoScroll = NO;
@@ -71,7 +74,7 @@
     ZXCycleBannerView *bannerView = [[ZXCycleBannerView alloc]initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, self.view.frame.size.width * 110 /169.0)];
     bannerView.delegate = self;
     bannerView.dataSource = self;
-    [self.view addSubview:bannerView];
+    [self.contentView addSubview:bannerView];
     bannerView.autoScrollTimeInterval = 2.0;
     bannerView.autoScroll = YES;
     bannerView.showPageControl = YES;
@@ -88,7 +91,7 @@
     categoryView.itemArray = @[@"item0", @"item1", @"item2", @"item3", @"item4",@"item5", @"item6", @"item7", @"item8", @"item9"];
     
     
-    [self.view addSubview:categoryView];
+    [self.contentView addSubview:categoryView];
 #endif
     
 #ifdef DZXPageCollectionView
@@ -98,7 +101,7 @@
     PCV.backgroundColor = [UIColor grayColor];
     [PCV registerClass:[childVIew class] forViewWithReuseIdentifier:@"childView"];
     _pageCollectionView  = PCV;
-    [self.view addSubview:PCV];
+    [self.contentView addSubview:PCV];
     [PCV changeToIndex:4 animation:NO];
     
 #endif

@@ -119,45 +119,21 @@ static NSString *const cellIdentifier = @"CycleCellIdentifier";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self replaceView];
     if (self.autoScroll) {
         [self setupTimer];
     }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    self.mainCollectionView.userInteractionEnabled = NO;
     if (self.autoScroll) {
         [self invalidateTimer];
     }
 }
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    [self replaceView];
-}
-
 #pragma mark - method
-- (void)replaceView{
-    NSLog(@"%d",(int)(self.mainCollectionView.contentOffset.x / self.mainCollectionView.frame.size.width));
-    self.currentIndex = (int)(self.mainCollectionView.contentOffset.x / self.mainCollectionView.frame.size.width);
-    if (self.currentIndex == 0) {
-        self.currentIndex = self.imageArray.count;
-//        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.imageArray.count inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-        [self.mainCollectionView setContentOffset:CGPointMake(self.imageArray.count * self.frame.size.width, 0)];
-    }
-    if (self.currentIndex == self.imageArray.count + 1) {
-        self.currentIndex = 1;
-//        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-         [self.mainCollectionView setContentOffset:CGPointMake(self.frame.size.width, 0)];
-    }
-//    self.mainCollectionView.userInteractionEnabled = YES;
-}
 
 - (void)automaticScroll
 {
     [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-//    self.mainCollectionView.userInteractionEnabled = NO;
 }
 
 #pragma mark - time

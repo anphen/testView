@@ -34,6 +34,8 @@
 @property (nonatomic, assign) NSTimeInterval autoScrollTimeInterval;
 @property (nonatomic, assign) BOOL autoScroll;
 
+@property (nonatomic, assign) NSInteger currentIndex;
+
 @property (nonatomic, assign) BOOL showPageControl;
 @property (nonatomic, strong) UIColor *pageControlTintColor;
 @property (nonatomic, strong) UIColor *pageControlCurrentTintColor;
